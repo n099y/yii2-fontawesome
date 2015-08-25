@@ -73,38 +73,38 @@ Helper
 ```php
 use rmrevin\yii\fontawesome\FA;
 
-echo FA::icon('home'); // <i class="fa fa-home"></i>
-echo FA::icon(
+echo FA::Icon('home'); // <i class="fa fa-home"></i>
+echo FA::Icon(
     'arrow-left', 
     ['class' => 'big', 'data-role' => 'arrow']
 ); // <i class="big fa fa-arrow-left" data-role="arrow"></i>
 
 echo Html::submitButton(
-    Yii::t('app', '{icon} Save', ['icon' => FA::icon('check')])
+    Yii::t('app', '{icon} Save', ['icon' => FA::Icon('check')])
 ); // <button type="submit"><i class="fa fa-check"></i> Save</button>
 
-echo FA::icon('cog')->inverse();    // <i class="fa fa-cog fa-inverse"></i>
-echo FA::icon('cog')->spin();       // <i class="fa fa-cog fa-spin"></i>
-echo FA::icon('cog')->fixedWidth(); // <i class="fa fa-cog fa-fw"></i>
-echo FA::icon('cog')->ul();         // <i class="fa fa-cog fa-ul"></i>
-echo FA::icon('cog')->li();         // <i class="fa fa-cog fa-li"></i>
-echo FA::icon('cog')->border();     // <i class="fa fa-cog fa-border"></i>
-echo FA::icon('cog')->pullLeft();   // <i class="fa fa-cog pull-left"></i>
-echo FA::icon('cog')->pullRight();  // <i class="fa fa-cog pull-right"></i>
+echo FA::Icon('cog')->inverse();    // <i class="fa fa-cog fa-inverse"></i>
+echo FA::Icon('cog')->spin();       // <i class="fa fa-cog fa-spin"></i>
+echo FA::Icon('cog')->fixedWidth(); // <i class="fa fa-cog fa-fw"></i>
+echo FA::Icon('cog')->ul();         // <i class="fa fa-cog fa-ul"></i>
+echo FA::Icon('cog')->li();         // <i class="fa fa-cog fa-li"></i>
+echo FA::Icon('cog')->border();     // <i class="fa fa-cog fa-border"></i>
+echo FA::Icon('cog')->pullLeft();   // <i class="fa fa-cog pull-left"></i>
+echo FA::Icon('cog')->pullRight();  // <i class="fa fa-cog pull-right"></i>
 
-echo FA::icon('cog')->size(FA::SIZE_3X);
+echo FA::Icon('cog')->size(FA::SIZE_3X);
 // values: FA::SIZE_LARGE, FA::SIZE_2X, FA::SIZE_3X, FA::SIZE_4X, FA::SIZE_5X
 // <i class="fa fa-cog fa-size-3x"></i>
 
-echo FA::icon('cog')->rotate(FA::ROTATE_90); 
+echo FA::Icon('cog')->rotate(FA::ROTATE_90); 
 // values: FA::ROTATE_90, FA::ROTATE_180, FA::ROTATE_180
 // <i class="fa fa-cog fa-rotate-90"></i>
 
-echo FA::icon('cog')->flip(FA::FLIP_VERTICAL); 
+echo FA::Icon('cog')->flip(FA::FLIP_VERTICAL); 
 // values: FA::FLIP_HORIZONTAL, FA::FLIP_VERTICAL
 // <i class="fa fa-cog fa-flip-vertical"></i>
 
-echo FA::icon('cog')
+echo FA::Icon('cog')
         ->spin()
         ->fixedWidth()
         ->pullLeft()
@@ -112,7 +112,7 @@ echo FA::icon('cog')
 // <i class="fa fa-cog fa-spin fa-fw pull-left fa-size-lg"></i>
 
 echo FA::stack()
-        ->icon('twitter')
+        ->Icon('twitter')
         ->on('square-o');
 // <span class="fa-stack">
 //   <i class="fa fa-square-o fa-stack-2x"></i>
@@ -120,19 +120,19 @@ echo FA::stack()
 // </span>
 
 echo FA::stack(['data-role' => 'stacked-icon'])
-     ->on((new FA\Icon('square'))->inverse())
-     ->icon((new FA\Icon('cog'))->spin());
+     ->on(FA::Icon('square')->inverse())
+     ->icon(FA::Icon('cog')->spin());
 // <span class="fa-stack" data-role="stacked-icon">
 //   <i class="fa fa-square-o fa-inverse fa-stack-2x"></i>
 //   <i class="fa fa-cog fa-spin fa-stack-1x"></i>
 // </span>
 
 // autocomplete icons name in IDE
-echo FA::icon(FA::_COG);
-echo FA::icon(FA::_DESKTOP);
+echo FA::Icon(FA::_COG);
+echo FA::Icon(FA::_DESKTOP);
 echo FA::stack()
-     ->on((new FA\Icon(FA::_SQUARE))->inverse())
-     ->icon((new FA\Icon(FA::_COG))->spin());
+     ->on(FA::Icon(FA::_SQUARE)->inverse())
+     ->Icon(FA::Icon(FA::_COG)->spin());
 ```
 
 ### Set another prefix
@@ -140,8 +140,8 @@ echo FA::stack()
 ```php
 FA::$cssPrefix = 'awf';
 
-echo FA::icon('home');
+echo FA::Icon('home');
 // <i class="awf awf-home"></i>
-echo FA::icon('cog')->inverse();
+echo FA::Icon('cog')->inverse();
 // <i class="awf awf-cog awf-inverse"></i>
 ```
